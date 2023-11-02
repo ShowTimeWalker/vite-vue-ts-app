@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:test": "vue-tsc && vite build --mode .env.test",
+    "build:pro": "vue-tsc && vite build --mode .env.production"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
