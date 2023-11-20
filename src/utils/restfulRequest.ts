@@ -1,18 +1,18 @@
 import axios from 'axios'
 import { message } from 'ant-design-vue'
 
-const request = axios.create({
+const restfulRequest = axios.create({
     baseURL: import.meta.env.VITE_APP_BASE_API as string,
     timeout: 2000
 })
 
-request.interceptors.request.use(config => {
+restfulRequest.interceptors.request.use(config => {
     return config
 }, error => {
     return Promise.reject(error)
 })
 
-request.interceptors.response.use(response => {
+restfulRequest.interceptors.response.use(response => {
     return response.data
 }, error => {
     let errorMessage: string = ''
@@ -39,4 +39,4 @@ request.interceptors.response.use(response => {
     return Promise.reject(error)
 })
 
-export default request
+export default restfulRequest
