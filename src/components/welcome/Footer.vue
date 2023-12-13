@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <router-view />
+  <p>
+    Ant Design ©2018 Created by Ant UED
+  </p>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 
 </style>

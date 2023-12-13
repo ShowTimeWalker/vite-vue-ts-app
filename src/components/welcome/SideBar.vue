@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <router-view />
+  <a-card>
+
+  </a-card>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 
 </style>

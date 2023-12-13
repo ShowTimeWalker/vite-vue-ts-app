@@ -1,12 +1,19 @@
 import { createRouter, createWebHistory, Router, RouterOptions } from 'vue-router'
 
 const routes = [
-    { path: '/', name: 'Welcome', component: () => import('@/components/Welcome.vue') },
-    { path: '/Home', name: 'Home', component: () => import('@/components/Home.vue') },
-    { path: '/Foo', name: 'Foo', component: () => import('@/components/Foo.vue') },
-    { path: '/Bar', name: 'Bar', component: () => import('@/components/Bar.vue') },
-    { path: '/:pathMatch(.*)*', redirect: '/welcome' },
-]
+    {
+        path: '/',
+        name: 'Welcome',
+        component: () => import('@/components/welcome/index.vue'),
+        children: [
+            { path: 'home', name: 'Home', component: () => import('@/components/views/Home.vue') },
+            { path: 'foo', name: 'Foo', component: () => import('@/components/views/Foo.vue') },
+            { path: '', redirect: '/home' }
+        ]
+    },
+    { path: '/:pathMatch(.*)*', redirect: '/home' }
+];
+
 
 const router: Router = createRouter(<RouterOptions> {
     history: createWebHistory(),
