@@ -4,16 +4,15 @@ const routes = [
     {
         path: '/',
         name: 'Welcome',
-        component: () => import('@/components/welcome/index.vue'),
+        component: () => import('@/components/welcome/Welcome.vue'),
         children: [
             { path: 'home', name: 'Home', component: () => import('@/components/views/Home.vue') },
             { path: 'foo', name: 'Foo', component: () => import('@/components/views/Foo.vue') },
-            { path: '', redirect: '/home' }
+            { path: '/', redirect: '/home' }
         ]
     },
     { path: '/:pathMatch(.*)*', redirect: '/home' }
-];
-
+]
 
 const router: Router = createRouter(<RouterOptions> {
     history: createWebHistory(),

@@ -7,11 +7,9 @@ import Profile from '@/components/welcome/Profile.vue'
 import SideBar from '@/components/welcome/SideBar.vue'
 import { onMounted } from 'vue'
 
-
 onMounted(() => {
 
 })
-
 
 </script>
 

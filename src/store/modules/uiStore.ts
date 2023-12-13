@@ -6,6 +6,8 @@ export default defineStore({
         activeTab: 'home' as string,
         isModalOpen: false as boolean,
         isLoading: false as boolean,
+        panelKey: ['Resource'],
+        optionKey: ['Coupon'],
     }),
     actions: {
         openModal() {
@@ -17,5 +19,8 @@ export default defineStore({
         setLoading(state: boolean) {
             this.isLoading = state
         },
+        updatePanelKey(key: string) {
+            this.panelKey.splice(0, 1, key)
+        }
     },
 })

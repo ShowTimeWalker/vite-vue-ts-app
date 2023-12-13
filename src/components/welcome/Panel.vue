@@ -1,21 +1,19 @@
 <script setup lang="ts">
+import { layoutHierarchy } from '@/components/welcome/hierarchy.ts'
+import uiStore from '@/store/modules/uiStore.ts'
 import { reactive } from 'vue'
 
+const store = uiStore()
+
 const state = reactive({
-  selectedKeys: ['Resource']
+  panelOptions: layoutHierarchy.panels.map(p => p.name)
 })
 
-const onSelectPanel = ({ key }) => {
-  console.log(key)
-}
 </script>
 
 <template>
-  <a-menu v-model:selectedKeys="state.selectedKeys" theme="dark"
-          mode="horizontal" @click="onSelectPanel">
-    <a-menu-item key="Resource">Resource</a-menu-item>
-    <a-menu-item key="Apis">Apis</a-menu-item>
-    <a-menu-item key="History">History</a-menu-item>
+  <a-menu v-model:selectedKeys="store.panelKey" mode="horizontal" theme="dark">
+    <a-menu-item v-for="name in state.panelOptions" :key="name">{{ name }}</a-menu-item>
   </a-menu>
 </template>
 
