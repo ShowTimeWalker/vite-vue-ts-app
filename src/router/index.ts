@@ -6,8 +6,13 @@ const routes = [
         name: 'Welcome',
         component: () => import('@/components/welcome/Welcome.vue'),
         children: [
-            { path: 'home', name: 'Home', component: () => import('@/components/views/Home.vue') },
-            { path: 'foo', name: 'Foo', component: () => import('@/components/views/Foo.vue') },
+            { path: 'home', name: 'Home', component: () => import('@/components/views/home/Home.vue') },
+            { path: 'home/specification', name: 'Specification', component: () => import('@/components/views/home/Specification.vue') },
+            { path: 'resource', name: 'Resource', component: () => import('@/components/views/resources/Resource.vue') },
+            { path: 'resource/coupon', name: 'Coupon', component: () => import('@/components/views/resources/Coupon.vue') },
+            { path: 'resource/product', name: 'Product', component: () => import('@/components/views/resources/Product.vue') },
+            { path: 'apis', name: 'Apis', component: () => import('@/components/views/apis/Apis.vue') },
+            { path: 'history', name: 'History', component: () => import('@/components/views/history/History.vue') },
             { path: '/', redirect: '/home' }
         ]
     },

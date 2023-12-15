@@ -1,14 +1,29 @@
 <script setup lang="ts">
+import { toCapital } from '@/components/utils/stringHelper.ts'
 import Footer from '@/components/welcome/Footer.vue'
 import Main from '@/components/welcome/Main.vue'
 import Header from '@/components/welcome/Panel.vue'
 import Logo from '@/components/welcome/Logo.vue'
 import Profile from '@/components/welcome/Profile.vue'
 import SideBar from '@/components/welcome/SideBar.vue'
+import uiStore from '@/store/modules/uiStore.ts'
+import { rest } from '@/utils/rest.ts'
 import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const ui = uiStore()
 
 onMounted(() => {
+  const panelPath = route.path.split('/')[1]
+  ui.panelKeys = [toCapital(panelPath)]
 
+  rest.setUrl("https://jsonplaceholder.typicode.com/todos/1")
+      .setMethod('get')
+      .call()
+      .then(rsp => {
+        console.log(rsp)
+      })
 })
 
 </script>
@@ -34,49 +49,4 @@ onMounted(() => {
 
 <style scoped lang="scss">
 @import './layout.scss';
-
-.layout {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.header {
-  height: $header-height;
-  display: flex;
-
-  .logo {
-    width: $left-width;
-  }
-
-  .panel {
-    width: $middle-width;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .profile {
-    width: $right-width;
-  }
-}
-
-.content {
-  display: flex;
-
-  .sidebar {
-    width: $sidebar-width;
-  }
-
-  .main {
-    width: $main-width;
-  }
-}
-
-.footer {
-  height: 64px;
-  text-align: center;
-}
 </style>

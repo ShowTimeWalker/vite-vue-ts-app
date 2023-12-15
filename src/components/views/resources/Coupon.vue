@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  foo
+1
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

@@ -3,7 +3,7 @@ import '@/style.css'
 import * as AntdIcons from '@ant-design/icons-vue'
 import router from '@/router/index'
 import Antd from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
+import 'ant-design-vue/dist/reset.css'
 import { Component, createApp } from 'vue'
 import store from './store'
 

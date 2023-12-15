@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  bar
+
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

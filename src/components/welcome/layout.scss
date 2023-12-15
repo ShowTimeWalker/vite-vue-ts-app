@@ -7,3 +7,48 @@ $main-width: 85%;
 
 $header-height: 64px;
 $footer-height: 64px;
+
+.layout {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  height: $header-height;
+  display: flex;
+
+  .logo {
+    width: $left-width;
+  }
+
+  .panel {
+    width: $middle-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile {
+    width: $right-width;
+  }
+}
+
+.content {
+  display: flex;
+
+  .sidebar {
+    width: $sidebar-width;
+  }
+
+  .main {
+    width: $main-width;
+  }
+}
+
+.footer {
+  height: 64px;
+  text-align: center;
+}
