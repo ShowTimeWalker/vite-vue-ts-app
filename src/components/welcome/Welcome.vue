@@ -7,7 +7,6 @@ import Logo from '@/components/welcome/Logo.vue'
 import Profile from '@/components/welcome/Profile.vue'
 import SideBar from '@/components/welcome/SideBar.vue'
 import uiStore from '@/store/modules/uiStore.ts'
-import { rest } from '@/utils/rest.ts'
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -17,15 +16,7 @@ const ui = uiStore()
 onMounted(() => {
   const panelPath = route.path.split('/')[1]
   ui.panelKeys = [toCapital(panelPath)]
-
-  rest.setUrl("https://jsonplaceholder.typicode.com/todos/1")
-      .setMethod('get')
-      .call()
-      .then(rsp => {
-        console.log(rsp)
-      })
 })
-
 </script>
 
 <template>
