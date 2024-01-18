@@ -76,7 +76,7 @@ export const layoutHierarchy: Hierarchy = new Hierarchy([
         name: 'Apis',
         pages: [
             { name: 'Test' },
-            { name: 'Organize' },
+            { name: 'List' },
         ]
     },
     {

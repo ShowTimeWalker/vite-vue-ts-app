@@ -7,7 +7,7 @@
 
 <style scoped lang="scss">
 .image {
-  background-image: url('@/assets/logo.svg');
+  background-image: url('@/assets/vue.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }

@@ -20,8 +20,8 @@ export default defineConfig({
     port: 8080,
     strictPort: true,
     proxy: {
-      '/api': {
-        target: 'https://portal.xunyou.mobi',
+      '/api/service-assistant': {
+        target: 'http://localhost:8081/',
       },
     },
   }

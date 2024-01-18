@@ -12,6 +12,8 @@ const routes = [
             { path: 'resource/coupon', name: 'Coupon', component: () => import('@/components/views/resources/Coupon.vue') },
             { path: 'resource/product', name: 'Product', component: () => import('@/components/views/resources/Product.vue') },
             { path: 'apis', name: 'Apis', component: () => import('@/components/views/apis/Apis.vue') },
+            { path: 'apis/test', name: 'Test', component: () => import('@/components/views/apis/Test.vue') },
+            { path: 'apis/list', name: 'List', component: () => import('@/components/views/apis/List.vue') },
             { path: 'history', name: 'History', component: () => import('@/components/views/history/History.vue') },
             { path: '/', redirect: '/home' }
         ]
